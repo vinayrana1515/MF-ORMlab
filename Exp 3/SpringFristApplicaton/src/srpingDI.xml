@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	    
+    <!-- define the dependency -->
+    
+    <!-- Define your beans here -->
+
+  	  
+   	  	<bean id="fortune"
+ 		class="com.ncu.DI.Fortune">	
+ 		
+  	</bean>
+  	<bean id="myBCoach" class="com.ncu.DI.Baseball">
+<constructor-arg name = "name" value = "Vinay"></constructor-arg>
+<constructor-arg name="email" value="VInaymail"></constructor-arg>
+<constructor-arg name="teamname" value="Vinayteam"></constructor-arg>
+<property name="ifortune" ref="fortune"></property>
+<property name="name" value="Rana"></property>
+<property name="email" value="rana@mail"></property>
+<property name="teamname" value="RanaTeam"></property>
+<property name="add" ref="myAdd"></property>
+
+</bean>
+<bean id="myAdd" class="com.ncu.DI.Address">
+<property name="city" value="sector 23"></property>
+<property name="district" value="gurgaon"></property>
+<property name="state" value="Haryana"></property>
+</bean>
+   	<bean id="myTCoach"
+ 		class="com.ncu.DI.TennisCoach">
+ 		<constructor-arg ref="fortune"/>
+ 		 		
+   	</bean>
+  	 <bean id="teditor" 
+ class="spellCheckerP.TextEditor">
+<constructor-arg ref="sc"></constructor-arg>
+</bean>
+<bean id="sc" 
+class="spellCheckerP.SpellCheck">
+</bean>
+  	
+  
+  	
+    
+</beans>
